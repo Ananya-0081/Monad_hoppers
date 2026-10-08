@@ -223,5 +223,103 @@
     "registeredAt": "2026-10-08T10:17:21.386Z",
     "transactionHash": "0xa8d56d5f583d28125994654c73688c87dcf6fd90de99544be82c8c1d38998841",
     "blockNumber": 69229077
+  },
+  {
+    "recordId": "webcam-0|2026-10-08T19:12:04.045546+00:00",
+    "proofHash": "0xddc49cc756587696d61d9c77d47b3ed88f7348d744f916bdcc06427b9de738c2",
+    "proofScheme": "canonical-v1",
+    "legacyProofHash": "0x59d768b88d3477331416b2c4ed1b63c16a145571d17644f6cc8bbe0229d020a2",
+    "provenance": {
+      "issuer": "DAANDRISHTI",
+      "deviceId": "DAANDRISHTI-PI-01",
+      "modelId": "mobilenet_v3_large",
+      "modelHash": "0xaf5c057107a195908e52e10c8e499c5570f765b069cc5616c20055bf651e60f2"
+    },
+    "canonicalEvent": {
+      "schemaVersion": "1.0",
+      "eventType": "AI_DONATION_VERIFICATION",
+      "eventId": "5734c1c3e1645e9ddce602d15bab3304df1e9b232e59dd52682c55704a381529",
+      "issuer": "DAANDRISHTI",
+      "deviceId": "DAANDRISHTI-PI-01",
+      "modelId": "mobilenet_v3_large",
+      "modelVersion": "mobilenet_v3_clean_v1",
+      "modelHash": "0xaf5c057107a195908e52e10c8e499c5570f765b069cc5616c20055bf651e60f2",
+      "prediction": "20",
+      "confidence": 0.8939118981361389,
+      "decision": "ACCEPT",
+      "timestamp": "2026-10-08T19:12:04.045546+00:00",
+      "source": "webcam",
+      "sourceId": "webcam-0",
+      "targetBin": "BIN_20",
+      "itemStatus": "NOTE_DETECTED",
+      "recordHash": "0x59d768b88d3477331416b2c4ed1b63c16a145571d17644f6cc8bbe0229d020a2"
+    },
+    "sourceId": "webcam-0",
+    "originalDenomination": "20",
+    "originalBin": "BIN_20",
+    "originalRecord": {
+      "pocket_id": "webcam-0",
+      "timestamp": "2026-10-08T19:12:04.045546+00:00",
+      "item_status": "NOTE_DETECTED",
+      "predicted_denomination": "20",
+      "classifier_confidence": 0.8939118981361389,
+      "confidence": 0.8939118981361389,
+      "source": "webcam",
+      "decision": "ACCEPT",
+      "target_bin": "BIN_20",
+      "model_version": "mobilenet_v3_clean_v1"
+    },
+    "registeredAt": "2026-10-08T19:12:06.675Z",
+    "transactionHash": "0x077bcc6cbfc62a2b3db574622f0ca25a44e106c16efdc0126025743c195e57fc",
+    "blockNumber": 69335103
+  },
+  {
+    "recordId": "webcam-0|2026-10-08T19:23:27.233411+00:00",
+    "proofHash": "0x0bc13350bc984beb1566319df426220ec82a502d8cc26e07c4d5dd3c19d15745",
+    "proofScheme": "canonical-v1",
+    "legacyProofHash": "0x17debf6f37638ab8bb6ae53d54455fbfb79c83e3693a9b734845a5c08ca4cb98",
+    "provenance": {
+      "issuer": "DAANDRISHTI",
+      "deviceId": "DAANDRISHTI-PI-01",
+      "modelId": "mobilenet_v3_large",
+      "modelHash": "0xaf5c057107a195908e52e10c8e499c5570f765b069cc5616c20055bf651e60f2"
+    },
+    "canonicalEvent": {
+      "schemaVersion": "1.0",
+      "eventType": "AI_DONATION_VERIFICATION",
+      "eventId": "7ea761a60df002ecba0966db8b9f058f8474a91ed3aedc1c3170fe728dfa6cd4",
+      "issuer": "DAANDRISHTI",
+      "deviceId": "DAANDRISHTI-PI-01",
+      "modelId": "mobilenet_v3_large",
+      "modelVersion": "mobilenet_v3_clean_v1",
+      "modelHash": "0xaf5c057107a195908e52e10c8e499c5570f765b069cc5616c20055bf651e60f2",
+      "prediction": "500",
+      "confidence": 0.8451665639877319,
+      "decision": "ACCEPT",
+      "timestamp": "2026-10-08T19:23:27.233411+00:00",
+      "source": "webcam",
+      "sourceId": "webcam-0",
+      "targetBin": "BIN_500",
+      "itemStatus": "NOTE_DETECTED",
+      "recordHash": "0x17debf6f37638ab8bb6ae53d54455fbfb79c83e3693a9b734845a5c08ca4cb98"
+    },
+    "sourceId": "webcam-0",
+    "originalDenomination": "500",
+    "originalBin": "BIN_500",
+    "originalRecord": {
+      "pocket_id": "webcam-0",
+      "timestamp": "2026-10-08T19:23:27.233411+00:00",
+      "item_status": "NOTE_DETECTED",
+      "predicted_denomination": "500",
+      "classifier_confidence": 0.8451665639877319,
+      "confidence": 0.8451665639877319,
+      "source": "webcam",
+      "decision": "ACCEPT",
+      "target_bin": "BIN_500",
+      "model_version": "mobilenet_v3_clean_v1"
+    },
+    "registeredAt": "2026-10-08T19:23:28.736Z",
+    "transactionHash": "0x861a6d037b86968552e9b1adc5f329683c493f1eeeaf6d34ec8ab7c791aa5b4d",
+    "blockNumber": 69337362
   }
 ]
