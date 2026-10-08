@@ -162,9 +162,14 @@ export default function App() {
   const seen = useRef(null);
 
   const load = async () => {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 30000);
+
     try {
       setError("");
-      const res = await fetch(`${API_URL}/all-records`);
+      const res = await fetch(`${API_URL}/all-records`, {
+        signal: controller.signal,
+      });
       if (!res.ok) throw new Error("Failed to load records");
       const json = await res.json();
       if (!json.success) throw new Error(json.error || "API error");
@@ -183,6 +188,7 @@ export default function App() {
       console.error(e);
       setError("Can't reach the DaanDristi API. Start the backend on port 3000, then retry.");
     } finally {
+      clearTimeout(timeout);
       setLoading(false);
     }
   };

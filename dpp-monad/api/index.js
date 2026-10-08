@@ -1467,6 +1467,11 @@ app.get(
 
 let lastPrintedSummaryKey = null;
 
+const CACHE_TTL_MS = 15_000;
+let cachedAllRecordsResponse = null;
+let cachedAllRecordsTime = 0;
+let verificationInProgress = false;
+
 function printVerificationSummaryIfChanged(
   total,
   verified,
@@ -1523,6 +1528,43 @@ function printVerificationSummaryIfChanged(
 app.get(
   "/all-records",
   async (req, res) => {
+
+    const now = Date.now();
+
+    if (
+      cachedAllRecordsResponse &&
+      now - cachedAllRecordsTime < CACHE_TTL_MS
+    ) {
+
+      return res.json(
+        cachedAllRecordsResponse
+      );
+
+    }
+
+    if (verificationInProgress) {
+
+      if (cachedAllRecordsResponse) {
+
+        return res.json(
+          cachedAllRecordsResponse
+        );
+
+      }
+
+      return res.status(503).json({
+
+        success:
+          false,
+
+        error:
+          "Donation records verification is already in progress."
+
+      });
+
+    }
+
+    verificationInProgress = true;
 
     try {
 
@@ -1796,7 +1838,7 @@ app.get(
       );
 
 
-      res.json({
+      const response = {
 
         success:
           true,
@@ -1813,7 +1855,14 @@ app.get(
         records:
           results
 
-      });
+      };
+
+      cachedAllRecordsResponse = response;
+      cachedAllRecordsTime = Date.now();
+
+      res.json(
+        response
+      );
 
 
     } catch (error) {
@@ -1822,6 +1871,14 @@ app.get(
         "All records verification error:",
         error
       );
+
+      if (cachedAllRecordsResponse) {
+
+        return res.json(
+          cachedAllRecordsResponse
+        );
+
+      }
 
       res.status(500).json({
 
@@ -1832,6 +1889,10 @@ app.get(
           error.message
 
       });
+
+    } finally {
+
+      verificationInProgress = false;
 
     }
 
